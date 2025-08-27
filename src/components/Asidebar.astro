@@ -1,0 +1,59 @@
+---
+import Book from "@/assets/book-2.svg";
+import Calendar from "@/assets/calendar-week.svg";
+import File from "@/assets/file.svg";
+import Spark from "@/assets/file-spark.svg";
+import Home from "@/assets/home.svg";
+import Receipt from "@/assets/receipt-2.svg";
+
+const ICONS = [
+  {
+    name: "Home",
+    component: Home,
+    title: "Inicio",
+  },
+  {
+    name: "Calendar",
+    component: Calendar,
+    title: "Calendario",
+  },
+  {
+    name: "Book",
+    component: Book,
+    title: "Cursos",
+  },
+  {
+    name: "Receipt",
+    component: Receipt,
+    title: "Pagos",
+  },
+
+  {
+    name: "Spark",
+    component: Spark,
+    title: "Servicios",
+  },
+  {
+    name: "File",
+    component: File,
+    title: "Trámites",
+  },
+];
+---
+
+<aside class="flex fixed flex-col w-fit bg-white h-full">
+  {
+    ICONS.map((icon) => {
+      const { name, title } = icon;
+      return (
+        <a
+          class="p-4 flex flex-col justify-center items-center text-gray-800"
+          href=""
+        >
+          <icon.component class="size-8" />
+          <span class="text-xs">{title}</span>
+        </a>
+      );
+    })
+  }
+</aside>

@@ -1,0 +1,47 @@
+---
+import Clipboard from "@/assets/clipboard.svg";
+import Pencil from "@/assets/pencil.svg";
+import ToggleAct from "@/assets/hand-click.svg";
+
+const SERVICES = [
+  {
+    name: "Eventos",
+    description:
+      "Inscribete en nuestros eventos y participa en actividades culturales, deportivas y académicas.",
+    component: Clipboard,
+  },
+  {
+    name: "Refuerzo Académico",
+    description:
+      "Aprende con nuestros profesores expertos y refuerza tus conocimientos en cualquier curso.",
+    component: ToggleAct,
+  },
+  {
+    name: "Recursos",
+    description:
+      "Descubre y accede a una amplia variedad de recursos educativos en línea.",
+    component: Pencil,
+  },
+];
+---
+
+<h1 class="text-2xl font-semibold">Servicios</h1>
+<h2 class="text-sm">
+  Impulsa tu formación con servicios que refuerzan tu aprendizaje y te conectan
+  con actividades culturales, deportivas y académicas.
+</h2>
+<section class="grid grid-cols-2 gap-4 mt-8">
+  {
+    SERVICES.map((service) => (
+      <div class="flex flex-col gap-x-4 bg-white px-4 py-2 rounded-md shadow-lg">
+        <div class="flex items-center gap-x-2">
+          <span class="p-1 text-purple-700 bg-purple-200 rounded-sm">
+            <service.component class="size-6 "/>
+          </span>
+          <h3 class="text-sm font-semibold">{service.name}</h3>
+        </div>
+        <p class="text-xs mt-2 mb-4">{service.description}</p>
+      </div>
+    ))
+  }
+</section>
