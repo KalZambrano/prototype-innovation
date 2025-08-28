@@ -1,0 +1,92 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ArrowLeft from "@/assets/arrow-left.svg";
+import Info from "@/assets/info-circle.svg";
+import MapPin from "@/assets/map-pin.svg";
+import Board from "@/assets/chalkboard-teacher.svg";
+import Stairs from "@/assets/stairs-up.svg";
+import GROUPS from "@/data/groups.json";
+
+export function getStaticPaths() {
+  return GROUPS.map((group) => ({
+    params: { id: group.id },
+  }));
+}
+
+const { id } = Astro.params;
+const group = GROUPS.find((group) => group.id === id);
+---
+
+<Layout>
+  <section class="max-w-3xl mx-auto py-16">
+    <a
+      class="flex items-center w-fit font-semibold hover:bg-red-200 py-2 px-1 rounded-md"
+      href="/refuerzos/grupos"
+    >
+      <ArrowLeft class="size-6 text-red-400" />
+      Atrás
+    </a>
+    <article
+      class="bg-white rounded-md py-3 px-4 my-8 [&>p]:text-sm [&>p]:mb-2"
+    >
+      <h1 class="font-bold uppercase mb-4">{group?.name}</h1>
+      <p>Inicia: {group?.date} | Finaliza: {group?.endDate}</p>
+      <p class="flex flex-wrap gap-1">
+        {
+          group?.days.map((day) => (
+            <span class="border rounded-2xl px-2 py-1 text-xs">
+              {day.slice(0, 3)}
+            </span>
+          ))
+        }
+      </p>
+      <p class="text-sm">{group?.term}</p>
+      <p>Duración: {group?.duration}</p>
+      <p>Reuniones por semana: {group?.days.length}</p>
+      <p class="flex bg-gray-300/30 rounded-md py-2 px-3 my-4">
+        <Info class="size-6 text-gray-500 mr-2" />
+        <span class="text-xs text-gray-500"
+          >Al inscribirse, el estudiante declara y garantiza que se encuentra en
+          un estado de salud óptimo que le permite participar en nuestros
+          talleres presenciales.</span
+        >
+      </p>
+      <span class="text-xs">Organizado por: <strong>Grupo Onichan</strong></span
+      >
+      <span class="flex items-center gap-2 mt-4">
+        <MapPin class="size-4 text-gray-900" />
+        <span class="text-sm text-gray-900">¿Cómo llegar?</span>
+        <hr class="h-0 md:h-[1.5px] w-4/5 border-t-0 bg-neutral-400 mt-1" />
+      </span>
+      <div
+        class="bg-blue-100/40 rounded-md border-1 border-gray-500 px-3 py-2 my-4"
+      >
+        <div class="flex items-center gap-2 py-3">
+          <Board class="size-4 text-gray-900" />
+          <p class="text-sm font-light">
+            Ambiente: <strong
+              >ZONA UNIVERSITARIA-TORRE {group?.location.charAt(0)}</strong
+            >
+          </p>
+        </div>
+        <hr class="bg-neutral-400" />
+        <div class="flex items-center gap-2 py-3">
+          <Stairs class="size-4 text-gray-900" />
+          <p class="text-sm font-light">
+            Piso: <strong>{group?.location}</strong>
+          </p>
+        </div>
+      </div>
+      <div
+        class="bg-blue-100/40 rounded-md border-1 border-gray-500 px-3 py-2 my-4 text-sm"
+      >
+        <h4 class="font-semibold">Lima Sur</h4>
+        <p>Carretera Antigua Panamericana Sur Km. 16.5 Villa el Salvador</p>
+      </div>
+      <button
+        class="bg-purple-500 text-white font-semibold px-6 py-3 rounded-sm cursor-pointer"
+        >Inscribirme</button
+      >
+    </article>
+  </section>
+</Layout>

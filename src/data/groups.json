@@ -1,0 +1,102 @@
+[
+    {
+        "id": "typescript",
+        "name": "TypeScript",
+        "date": "06/10/2025",
+        "days": ["Martes", "Jueves"],
+        "duration": "5 semanas",
+        "term": ["9:00 - 12:00"],
+        "location": "C0102",
+        "endDate": "10/11/2025"
+    },
+    {
+        "id": "electromagnetismo",
+        "name": "Electromagnetismo",
+        "date": "15/09/2025",
+        "days": ["Lunes", "Miercoles", "Viernes"],
+        "term": ["7:00 - 9:00", "14:00 - 16:00"],
+        "duration": "7 semanas",
+        "location": "A0306",
+        "endDate": "03/11/2025"
+    },
+    {
+        "id": "autocad",
+        "name": "AutoCad",
+        "date": "22/09/2025",
+        "days": ["Sabado"],
+        "term": ["10:00 - 13:00"],
+        "duration": "6 semanas",
+        "location": "B0504",
+        "endDate": "03/11/2025"
+    },
+    {
+        "id": "calculo",
+        "name": "Cálculo Vectorial",
+        "date": "18/09/2025",
+        "days": ["Martes", "Jueves"],
+        "term": ["8:00 - 10:00"],
+        "duration": "8 semanas",
+        "location": "C0203",
+        "endDate": "13/11/2025"
+    },
+    {
+        "id": "mecanica-fluidos",
+        "name": "Mecánica de Fluidos",
+        "date": "12/10/2025",
+        "days": ["Lunes", "Miercoles"],
+        "term": ["11:00 - 13:00"],
+        "duration": "4 semanas",
+        "location": "B0107",
+        "endDate": "09/11/2025"
+    },
+    {
+        "id": "analisis-numerico",
+        "name": "Análisis Numérico",
+        "date": "25/09/2025",
+        "days": ["Martes"],
+        "term": ["13:00 - 16:00"],
+        "duration": "5 semanas",
+        "location": "A0601",
+        "endDate": "30/10/2025"
+    },
+    {
+        "id": "programacion-cpp",
+        "name": "Programación en C++",
+        "date": "20/09/2025",
+        "days": ["Viernes"],
+        "term": ["9:00 - 11:00", "13:00 - 15:00"],
+        "duration": "3 semanas",
+        "location": "C0309",
+        "endDate": "11/10/2025"
+    },
+    {
+        "id": "sistemas-dinamicos",
+        "name": "Sistemas Dinámicos",
+        "date": "05/10/2025",
+        "days": ["Lunes", "Miercoles", "Viernes"],
+        "term": ["10:00 - 12:00"],
+        "duration": "6 semanas",
+        "location": "B0705",
+        "endDate": "16/11/2025"
+    },
+    {
+        "id": "termodinamica",
+        "name": "Termodinámica",
+        "date": "29/09/2025",
+        "days": ["Martes", "Jueves"],
+        "term": ["8:00 - 11:00"],
+        "duration": "8 semanas",
+        "location": "A0102",
+        "endDate": "24/11/2025"
+    },
+    {
+        "id": "matematicas-discretas",
+        "name": "Matemáticas Discretas",
+        "date": "10/10/2025",
+        "days": ["Lunes", "Viernes"],
+        "term": ["14:00 - 16:00"],
+        "duration": "2 semanas",
+        "location": "C0806",
+        "endDate": "24/10/2025"
+    }
+]
