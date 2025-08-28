@@ -3,6 +3,7 @@ import "@/styles/global.css";
 
 import Asidebar from "@/components/Asidebar.astro";
 import Navbar from "@/components/Navbar.astro";
+import ClientRouter from "astro/components/ClientRouter.astro";
 ---
 
 <!doctype html>
@@ -13,12 +14,13 @@ import Navbar from "@/components/Navbar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+    <ClientRouter />
   </head>
   <body>
 	  <Navbar/>
 	  <Asidebar/>
 	
-    <main class="mx-auto max-w-5xl mt-8">
+    <main class="mx-auto max-w-5xl mt-8 pl-32">
 		<slot />
 	</main>
   </body>
