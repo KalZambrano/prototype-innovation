@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ArrowLeft from "@/assets/arrow-left.svg";
+
+const OPTIONS = ["Inscritos", "Grupos", "Conferencias"];
+const currentPath = Astro.url.pathname;
+---
+<Layout>
+  <section class="max-w-3xl mx-auto pt-16">
+    <a
+      class="flex items-center w-fit font-semibold hover:bg-red-200 py-2 px-1 rounded-md"
+      href="/"
+    >
+      <ArrowLeft class="size-6 text-red-400" />
+      Atrás
+    </a>
+
+    <h1 class="text-2xl font-semibold py-4">Grupos de Estudio</h1>
+
+    <nav>
+      <ul class="mt-4 flex pb-3 border-b-1 border-gray-400">
+        {
+          OPTIONS.map((option) => {
+            const route = `/refuerzos/${option.toLowerCase()}`;
+            const isActive = currentPath === route;
+
+            return (
+              <li class="font-semibold">
+                <a
+                  href={route}
+                  class={`py-3 px-4 hover:text-purple-600/80 hover:bg-purple-200/60 ${
+                    isActive
+                      ? "text-purple-700 border-b-2 border-purple-700"
+                      : "text-gray-600"
+                  }`}
+                >
+                  {option}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+    <article class="py-4 px-1">
+      <slot />
+    </article>
+  </section>
+</Layout>
