@@ -1,0 +1,79 @@
+[
+    {
+        "id": "programacion-conferencia",
+        "title": "Conferencia de Programación",
+        "date": "2025-09-01",
+        "startHour": "19:00",
+        "endHour": "21:00"
+    },
+    {
+        "id": "ia-machine-learning",
+        "title": "Inteligencia Artificial y Machine Learning",
+        "date": "2025-09-05",
+        "startHour": "18:30",
+        "endHour": "20:30"
+    },
+    {
+        "id": "ciberseguridad-etica",
+        "title": "Ciberseguridad y Hacking Ético",
+        "date": "2025-09-08",
+        "startHour": "16:00",
+        "endHour": "18:00"
+    },
+    {
+        "id": "estructuras-construccion",
+        "title": "Innovaciones en Estructuras de Construcción",
+        "date": "2025-09-12",
+        "startHour": "17:00",
+        "endHour": "19:00"
+    },
+    {
+        "id": "redes-telecomunicaciones",
+        "title": "Redes 5G y Telecomunicaciones del Futuro",
+        "date": "2025-09-15",
+        "startHour": "19:30",
+        "endHour": "21:30"
+    },
+    {
+        "id": "robotica-automatizacion",
+        "title": "Robótica y Automatización Industrial",
+        "date": "2025-09-18",
+        "startHour": "18:00",
+        "endHour": "20:00"
+    },
+    {
+        "id": "energia-renovable",
+        "title": "Ingeniería en Energías Renovables",
+        "date": "2025-09-22",
+        "startHour": "16:30",
+        "endHour": "18:30"
+    },
+    {
+        "id": "bioingenieria-medica",
+        "title": "Bioingeniería y Tecnología Médica",
+        "date": "2025-09-25",
+        "startHour": "17:30",
+        "endHour": "19:30"
+    },
+    {
+        "id": "materiales-nanotecnologia",
+        "title": "Nanotecnología e Ingeniería de Materiales",
+        "date": "2025-09-29",
+        "startHour": "18:00",
+        "endHour": "20:00"
+    },
+    {
+        "id": "sistemas-embebidos",
+        "title": "Sistemas Embebidos y IoT",
+        "date": "2025-10-02",
+        "startHour": "19:00",
+        "endHour": "21:00"
+    },
+    {
+        "id": "ingenieria-software",
+        "title": "Arquitectura de Software y DevOps",
+        "date": "2025-10-06",
+        "startHour": "17:00",
+        "endHour": "19:00"
+    }
+]

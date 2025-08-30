@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CONFERENCES from "@/data/conferencias.json";
+import ArrowLeft from "@/assets/arrow-left.svg";
+
+export function getStaticPaths() {
+  return CONFERENCES.map((conference) => ({
+    params: { id: conference.id },
+  }));
+}
+
+const { id } = Astro.params;
+const group = CONFERENCES.find((conference) => conference.id === id);
+---
+
+<Layout>
+  <section class="py-16">
+    <a
+      class="flex items-center w-fit font-semibold hover:bg-red-200 py-2 px-1 rounded-md"
+      href="/refuerzos/conferencias"
+    >
+      <ArrowLeft class="size-6 text-red-400" />
+      Atrás
+    </a>
+    {group && <h1>{group.title}</h1>}
+  </section>
+</Layout>

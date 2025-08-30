@@ -1,0 +1,58 @@
+---
+import ServiceSection from "@/components/ServiceSection.astro";
+import CONFERENCE from "@/data/conferencias.json";
+import HeadSet from "@/assets/headset.svg";
+---
+
+<ServiceSection>
+  <div class="py-4 border-b-1 border-gray-400">
+    <input
+      class="placeholder:text-gray-600 rounded-sm px-3 py-1 border-1 border-gray-400 bg-white"
+      type="text"
+      placeholder="Buscar Grupo"
+    />
+  </div>
+  <h3 class="font-semibold mt-4">Tenemos estos talleres para ti</h3>
+  <section class="grid grid-cols-2 gap-4">
+    {
+      CONFERENCE.map((conference) => {
+        const formatedDate = (fechaStr) => {
+          const [year, month, day] = fechaStr.split("-");
+          const fecha = new Date(year, month - 1, day);
+
+          return fecha.toLocaleDateString("es-ES", {
+            weekday: "short",
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          });
+        };
+        return (
+          <a
+            href={`conferencias/${conference.id}`}
+            class="flex flex-col gap-x-4 bg-white rounded-md shadow-md hover:bg-blue-100/60"
+          >
+            <header class="border-b-1 border-gray-200 p-3 flex justify-between items-center">
+              <h3 class="text-sm font-semibold">{conference.title}</h3>
+              <span class="px-3 py-1 rounded-2xl bg-blue-200/80">✔️</span>
+            </header>
+            <div class="flex items-center gap-x-2">
+              <span class="grid place-content-center w-24 h-full border-r-1 border-gray-200">
+                <img
+                  class="w-20"
+                  src="https://icons.iconarchive.com/icons/icons8/windows-8/512/Cinema-Spiderman-New-icon.png"
+                  alt="Spider-man icon"
+                />
+              </span>
+              <div class="text-sm text-gray-600 self-start relative size-full pt-4 pb-8">
+                <p class="mb-4">{formatedDate(conference.date)}</p>
+                <p>{conference.startHour} - {conference.endHour}</p>
+                <HeadSet class="absolute right-4 bottom-4 size-6" />
+              </div>
+            </div>
+          </a>
+        );
+      })
+    }
+  </section>
+</ServiceSection>
