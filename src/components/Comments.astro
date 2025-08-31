@@ -1,0 +1,16 @@
+---
+import COMMENTS from "@/scripts/comments.ts";
+import UserExclamation from "@/assets/user-exclamation.svg";
+---
+
+<h4 class="text-2xl font-bold">Algunos comentarios de nuestros estudiantes!</h4>
+<section class="flex flex-wrap gap-5 justify-center py-4">
+  {
+    COMMENTS.map((comment) => (
+      <article class="w-1/4 bg-white rounded-md py-3 px-4 [&>p]:text-sm [&>p]:mb-2 border-1 border-gray-500">
+        <p class="text-lg font-bold flex items-center"><UserExclamation class="size-6 inline-block mr-2" />{comment.name}</p>
+        <p>{comment.comment}</p>
+      </article>
+    ))
+  }
+</section>
