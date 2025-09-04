@@ -1,12 +1,71 @@
-<h3>Entendemos sus necesidades de reforzar su aprendizaje</h3>
-<p>
-  Por eso creamos una sección para buscar apoyo en esos cursos que se te
-  dificultan
-</p>
-<ul>
-  <li>Estudia entre compañeros</li>
-  <li>Ayuda a otros estudiantes</li>
-  <li>Comparte tus conocimientos</li>
-  <li>Refuerza tus habilidades</li>
-  <li>Conecta con otros estudiantes</li>
-</ul>
+---
+import SectionContainer from "./SectionContainer.astro";
+
+import CollabFigure from "@/assets/figures/collab.svg";
+import ConnectFigure from "@/assets/figures/connecting-teams.svg";
+import EducatorFigure from "@/assets/figures/educator.svg";
+import ShareFigure from "@/assets/figures/sharing-knowledge.svg";
+import TrainingFigure from "@/assets/figures/training.svg";
+
+const PROPERTIES = [
+  {
+    icon: CollabFigure,
+    title: "Estudia entre compañeros",
+    description: "Aprende colaborativamente en un entorno de apoyo mutuo.",
+  },
+  {
+    icon: EducatorFigure,
+    title: "Ayuda a otros estudiantes",
+    description: "Consolida tus conocimientos enseñando a otros.",
+  },
+  {
+    icon: ShareFigure,
+    title: "Comparte tus conocimientos",
+    description: "Contribuye con tus ideas a la comunidad estudiantil.",
+  },
+  {
+    icon: TrainingFigure,
+    title: "Refuerza tus habilidades",
+    description: "Practica y domina lo que has aprendido.",
+  },
+  {
+    icon: ConnectFigure,
+    title: "Conecta con otros estudiantes",
+    description: "Amplía tu red de contactos académicos.",
+  },
+];
+---
+
+<SectionContainer>
+  <h3
+    class="[&>strong]:text-red-900 [&>strong]:font-bold text-5xl font-bold text-center w-2/3 mx-auto leading-14"
+  >
+    <strong>Refuerza tus habilidades</strong> junto a otros estudiantes
+  </h3>
+  <p class="my-4 text-lg text-center text-gray-600 w-1/2 mx-auto">
+    Aprende y crece en un espacio colaborativo; un lugar donde puedes reforzar
+    tus habilidades con el apoyo de otros estudiantes.
+  </p>
+  <ul class="flex flex-wrap justify-center items-center gap-8">
+    {
+      PROPERTIES.map((property) => {
+        return (
+          <li class="flex flex-col gap-4 my-4 max-w-2xs items-center text-center">
+            <property.icon class="size-60" />
+            <div>
+              <h4 class="text-[28px] font-bold text-red-900 mb-2">
+                {property.title}
+              </h4>
+              <p class="text-gray-500 text-lg">{property.description}</p>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <a
+    href="/refuerzos/grupos"
+    class="mx-auto w-fit flex bg-transparent hover:bg-red-800 border-2 border-red-800 text-red-800 font-semibold hover:text-white py-4 px-12 rounded-3xl transition-colors my-12 text-2xl"
+    >Averigualo ahora</a
+  >
+</SectionContainer>

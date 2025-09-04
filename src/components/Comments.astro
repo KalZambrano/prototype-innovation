@@ -2,14 +2,17 @@
 import { CommentsSlider } from "@/components/CommentsSlider";
 ---
 
-<h2
-  class="[&>strong]:text-red-900 [&>strong]:font-bold text-5xl font-bold text-center"
->
-  Muro de <strong>Comentarios</strong>
-</h2>
-<p class="my-4 text-lg text-center text-gray-600 w-1/2 mx-auto">
-  Descubre algunos de los comentarios que estudiantes dejan para mejorar nuestra plataforma!
-</p>
-<section class="flex flex-wrap gap-5 justify-center py-4">
-  <CommentsSlider client:load />
+<section class="bg-radial-[at_25%_25%] from-red-500/90 to-zinc-800 to-75% py-24">
+  <h2
+    class="text-white text-6xl font-bold text-center"
+  >
+    Muro de Comentarios
+  </h2>
+  <p class="my-4 text-lg text-center text-white w-1/3 mx-auto">
+    Descubre algunos de los comentarios que estudiantes dejan para mejorar
+    nuestra plataforma!
+  </p>
+  <section class="flex flex-wrap gap-5 justify-center py-8">
+    <CommentsSlider client:load />
+  </section>
 </section>

@@ -1,4 +1,7 @@
-<section class="py-32">
+---
+import SectionContainer from "./SectionContainer.astro"
+---
+<SectionContainer class="py-32 max-w-5xl mx-auto">
   <h1
     class="text-7xl font-bold text-center w-[80%] mx-auto [&>strong]:text-red-900 [&>strong]:font-bold leading-20"
   >
@@ -12,18 +15,18 @@
       >reforzar los temas</span
     >, resolver dudas y prepararse con <span>mayor confianza</span>.
   </p>
-  <a class="flex justify-center w-fit mx-auto my-8" href="/refuerzos/grupos">
+  <a class="flex justify-center w-fit mx-auto my-8 hover:-translate-y-2 transition-all group" href="/refuerzos/grupos">
     <div class="flex items-center">
-      <span class="relative inline-flex overflow-hidden rounded-[35px] p-[5px]">
+      <span class="relative inline-flex overflow-hidden rounded-[20px] p-[5px]">
         <span
           class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#8C0000_0%,#FF0000_50%,#8C0000_100%)]"
         ></span>
         <div
-          class="inline-flex items-center justify-center w-full px-20 py-6 text-2xl font-bold text-red-800 bg-red-100 rounded-4xl cursor-pointer backdrop-blur-3xl whitespace-nowrap transition-colors"
+          class="inline-flex items-center justify-center w-full px-20 py-6 text-2xl font-bold group-hover:text-red-800 bg-red-100 rounded-2xl cursor-pointer backdrop-blur-3xl whitespace-nowrap transition-colors"
         >
           Encuentra tu grupo
         </div>
       </span>
     </div>
   </a>
-</section>
+</SectionContainer>
