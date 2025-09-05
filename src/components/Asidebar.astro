@@ -6,49 +6,56 @@ import Spark from "@/assets/file-spark.svg";
 import Home from "@/assets/home.svg";
 import Receipt from "@/assets/receipt-2.svg";
 
-const ICONS = [
+const NAVITEMS = [
   {
     name: "Home",
     component: Home,
     title: "Inicio",
+    href: "/"
   },
   {
     name: "Calendar",
     component: Calendar,
     title: "Calendario",
+    href: "#"
   },
   {
     name: "Book",
     component: Book,
     title: "Cursos",
+    href: "#"
   },
   {
     name: "Receipt",
     component: Receipt,
     title: "Pagos",
+    href: "#"
   },
 
   {
     name: "Spark",
     component: Spark,
     title: "Servicios",
+    href: "/servicios"
   },
   {
     name: "File",
     component: File,
     title: "Trámites",
+    href: "#"
   },
 ];
 ---
 
-<aside class="flex fixed top-18 flex-col w-fit bg-white h-full">
+<aside class="md:flex hidden fixed top-18 flex-col w-fit bg-white h-full">
   {
-    ICONS.map((icon) => {
+    NAVITEMS.map((icon) => {
       const { name, title } = icon;
+      const styleClass = (title === 'Servicios') ? "bg-blue-100" : ""
       return (
         <a
-          class="p-4 flex flex-col justify-center items-center text-gray-800"
-          href=""
+          class={`p-4 hover:bg-blue-200 ${styleClass} p-4 flex flex-col justify-center items-center text-gray-800`}
+          href={icon.href}
         >
           <icon.component class="size-8" />
           <span class="text-xs">{title}</span>

@@ -1,21 +1,32 @@
 ---
-import Burger from '@/assets/menu-2.svg'
-import Help from '@/assets/help.svg'
-import DownArrow from '@/assets/chevron-compact-down.svg'
+import Burger from "@/assets/menu-2.svg";
+import Help from "@/assets/help.svg";
+import DownArrow from "@/assets/chevron-compact-down.svg";
 ---
+
 <nav class="flex bg-white fixed top-0 left-0 right-0 z-20">
-    <span class="px-8 py-6 text-white bg-gradient-to-r from-red-400/80 to-red-300 bg-pink-400"><Burger class="text-white"/></span>
-    <div class="flex w-full justify-between items-center py-4 px-8">
-        <img src="/portalutp.png" alt="UTP + Portal logo">
-        <section class="flex items-center gap-x-3">
-            <Help/>
-            <hr class="h-0 md:h-[35px] w-[0.5px] border-t-0 bg-neutral-400 mx-auto">
-            <div class="text-sm">
-                <p>Hola, <span class="font-bold">Usuario</span></p>
-                <p class="text-gray-500">U2222222</p>
-            </div>
-            <img class="rounded-full size-10" src="/el-club-mas-grande.png" alt="Foto de Perfil">
-            <DownArrow class="text-gray-500 mx-3"/>
-        </section>
-    </div>
+  <span
+    class="flex items-center px-4 py-3 md:px-8 md:py-6 text-white bg-gradient-to-r from-red-400/80 to-red-300 bg-pink-400"
+    ><Burger class="text-white" /></span
+  >
+  <div class="flex mx-auto md:mx-0 w-full justify-between items-center py-4 px-4 md:px-8">
+    <img class="w-1/2 md:w-fit" src="/portalutp.png" alt="UTP + Portal logo" />
+
+    <section class="flex items-center gap-x-3">
+      <Help />
+      <hr class="hidden md:block h-0 md:h-[35px] w-[0.5px] border-t-0 bg-neutral-400 mx-auto" />
+      <div class="hidden md:flex items-center">
+        <div class="text-sm">
+          <p>Hola, <span class="font-bold">Usuario</span></p>
+          <p class="text-gray-500">U2222222</p>
+        </div>
+        <img
+          class="rounded-full size-10"
+          src="/el-club-mas-grande.png"
+          alt="Foto de Perfil"
+        />
+        <DownArrow class="text-gray-500 mx-3" />
+      </div>
+    </section>
+  </div>
 </nav>
