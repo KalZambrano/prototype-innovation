@@ -1,69 +1,13 @@
 ---
 import ServiceSection from "@/components/ServiceSection.astro";
 import Desk from "@/assets/desk.svg";
+import Taller from "@/assets/random/tallerimg.svg";
+import ConfenceIcon from "@/assets/random/conference.svg";
 
-const TRENDS = [
-  {
-    title: "Java Script Avanzado",
-    date: "12/09/2025",
-    days: ["Lunes", "Miercoles", "Viernes"],
-    term: ["8:00 - 11:00", "13:00 - 16:00"],
-  },
-  {
-    title: "Businness English",
-    date: "10/09/2025",
-    days: ["Lunes"],
-    term: ["12:00 - 14:00"],
-  },
-  {
-    title: "Inteligencia de Negocios",
-    date: "08/09/2025",
-    days: ["Martes", "Jueves"],
-    term: ["10:00 - 12:00"],
-  },
-  {
-    title: "Machine Learning y Deep Learning",
-    date: "15/09/2025",
-    days: ["Martes", "Miercoles", "Viernes"],
-    term: ["9:00 - 12:00"],
-  },
-  {
-    title: "Arquitectura de Software y Microservicios",
-    date: "18/09/2025",
-    days: ["Lunes", "Jueves"],
-    term: ["14:00 - 17:00", "18:00 - 20:00"],
-  },
-  {
-    title: "Blockchain y Criptografía Aplicada",
-    date: "20/09/2025",
-    days: ["Miercoles"],
-    term: ["16:00 - 19:00"],
-  },
-  {
-    title: "DevOps y Automatización en la Nube",
-    date: "22/09/2025",
-    days: ["Martes", "Viernes"],
-    term: ["10:00 - 13:00"],
-  },
-  {
-    title: "Análisis de Datos con Python y R",
-    date: "25/09/2025",
-    days: ["Lunes", "Miercoles", "Sabado"],
-    term: ["15:00 - 18:00", "19:00 - 21:00"],
-  },
-  {
-    title: "Ciberseguridad y Hacking Ético",
-    date: "28/09/2025",
-    days: ["Jueves", "Sabado"],
-    term: ["17:00 - 20:00"],
-  },
-  {
-    title: "Desarrollo de Aplicaciones Móviles Multiplataforma",
-    date: "30/09/2025",
-    days: ["Lunes", "Martes", "Miercoles", "Jueves"],
-    term: ["8:00 - 11:00"],
-  },
-];
+import CONFERENCE from "@/data/conferencias.json";
+import GROUPS from "@/data/groups.json";
+
+const TRENDS = [...CONFERENCE, ...GROUPS];
 ---
 
 <ServiceSection>
@@ -73,37 +17,40 @@ const TRENDS = [
     <p>¡Empieza a inscribirte en tu primer Grupo de Estudio!</p>
   </article>
   <h3 class="font-semibold py-6">Grupos Destacados</h3>
-  <section class="grid grid-cols-2 gap-4">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       TRENDS.map((trend) => (
-        <a href="#" class="flex flex-col gap-x-4 bg-white rounded-md shadow-md hover:bg-blue-100/60">
+        <a
+          href={trend.days ? `detalle/${trend.id}` : `conferencias/${trend.id}`}
+          class="flex flex-col gap-x-4 bg-white rounded-md shadow-md hover:bg-blue-100/60"
+        >
           <header class="border-b-1 border-gray-200 p-3 uppercase flex justify-between items-center">
             <h3 class="text-sm font-semibold">{trend.title}</h3>
             <span class="px-3 py-1 rounded-2xl bg-yellow-200/80">⭐</span>
           </header>
           <div class="flex items-center gap-x-2">
             <span class="grid place-content-center w-24 h-full border-r-1 border-gray-200">
-              <img
-                class="w-20"
-                src="/el-club-mas-grande.png"
-                alt="El club mas grande icon"
-              />
+              {trend.days ? <Taller /> : <ConfenceIcon />}
             </span>
             <div class="text-xs py-3">
               <span>
                 <strong>Inicia: </strong>
                 {trend.date}
               </span>
-              <ul class="flex flex-wrap gap-1 py-2">
-                {trend.days.map((day) => (
-                  <li class="border rounded-2xl px-2 py-1">
-                    {day.slice(0, 3)}
-                  </li>
-                ))}
-              </ul>
-              <span>
-                {trend.term.length > 1 ? "Varios Horarios" : trend.term}
-              </span>
+              {trend.days && (
+                <ul class="flex flex-wrap gap-1 py-2">
+                  {trend.days.map((day) => (
+                    <li class="border rounded-2xl px-2 py-1">
+                      {day.slice(0, 3)}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {trend.term && (
+                <span>
+                  {trend.term.length > 1 ? "Varios Horarios" : trend.term}
+                </span>
+              )}
             </div>
           </div>
         </a>

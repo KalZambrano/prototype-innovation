@@ -1,0 +1,52 @@
+---
+import GROUPS from "@/data/groups.json";
+import Taller from "@/assets/random/tallerimg.svg";
+---
+
+<div class="py-4 border-b-1 border-gray-400">
+    <input
+      class="placeholder:text-gray-600 rounded-sm px-3 py-1 border-1 border-gray-400 bg-white"
+      type="text"
+      placeholder="Buscar Grupo"
+    />
+  </div>
+  <h3 class="font-semibold my-4">Tenemos estos grupos para ti</h3>
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    {
+      GROUPS.map((group) => (
+        <a
+          href={`detalle/${group.id}`}
+          class="flex flex-col gap-x-4 bg-white rounded-md shadow-md hover:bg-blue-100/60"
+        >
+          <header class="border-b-1 border-gray-200 p-3 uppercase flex justify-between items-center">
+            <h3 class="text-sm font-semibold">{group.title}</h3>
+            <span class="px-3 py-1 rounded-2xl bg-yellow-200/80">⭐</span>
+          </header>
+          <div class="flex items-center gap-x-2">
+            <span class="grid place-content-center w-24 h-full border-r-1 border-gray-200">
+              <Taller
+                class="w-20"
+              />
+            </span>
+            <div class="text-xs py-3">
+              <span>
+                <strong>Inicia: </strong>
+                {group.date}
+              </span>
+              <ul class="flex flex-wrap gap-1 py-2">
+                {group.days.map((day) => (
+                  <li class="border rounded-2xl px-2 py-1">
+                    {day.slice(0, 3)}
+                  </li>
+                ))}
+              </ul>
+              <span>
+                {group.term.length > 1 ? "Varios Horarios" : group.term}
+              </span>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </section>

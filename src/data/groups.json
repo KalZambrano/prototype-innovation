@@ -1,7 +1,7 @@
 [
     {
         "id": "typescript",
-        "name": "TypeScript",
+        "title": "TypeScript",
         "date": "06/10/2025",
         "days": ["Martes", "Jueves"],
         "duration": "5 semanas",
@@ -11,7 +11,7 @@
     },
     {
         "id": "electromagnetismo",
-        "name": "Electromagnetismo",
+        "title": "Electromagnetismo",
         "date": "15/09/2025",
         "days": ["Lunes", "Miercoles", "Viernes"],
         "term": ["7:00 - 9:00", "14:00 - 16:00"],
@@ -21,7 +21,7 @@
     },
     {
         "id": "autocad",
-        "name": "AutoCad",
+        "title": "AutoCad",
         "date": "22/09/2025",
         "days": ["Sabado"],
         "term": ["10:00 - 13:00"],
@@ -31,7 +31,7 @@
     },
     {
         "id": "calculo",
-        "name": "Cálculo Vectorial",
+        "title": "Cálculo Vectorial",
         "date": "18/09/2025",
         "days": ["Martes", "Jueves"],
         "term": ["8:00 - 10:00"],
@@ -41,7 +41,7 @@
     },
     {
         "id": "mecanica-fluidos",
-        "name": "Mecánica de Fluidos",
+        "title": "Mecánica de Fluidos",
         "date": "12/10/2025",
         "days": ["Lunes", "Miercoles"],
         "term": ["11:00 - 13:00"],
@@ -51,7 +51,7 @@
     },
     {
         "id": "analisis-numerico",
-        "name": "Análisis Numérico",
+        "title": "Análisis Numérico",
         "date": "25/09/2025",
         "days": ["Martes"],
         "term": ["13:00 - 16:00"],
@@ -61,7 +61,7 @@
     },
     {
         "id": "programacion-cpp",
-        "name": "Programación en C++",
+        "title": "Programación en C++",
         "date": "20/09/2025",
         "days": ["Viernes"],
         "term": ["9:00 - 11:00", "13:00 - 15:00"],
@@ -71,7 +71,7 @@
     },
     {
         "id": "sistemas-dinamicos",
-        "name": "Sistemas Dinámicos",
+        "title": "Sistemas Dinámicos",
         "date": "05/10/2025",
         "days": ["Lunes", "Miercoles", "Viernes"],
         "term": ["10:00 - 12:00"],
@@ -81,7 +81,7 @@
     },
     {
         "id": "termodinamica",
-        "name": "Termodinámica",
+        "title": "Termodinámica",
         "date": "29/09/2025",
         "days": ["Martes", "Jueves"],
         "term": ["8:00 - 11:00"],
@@ -91,7 +91,7 @@
     },
     {
         "id": "matematicas-discretas",
-        "name": "Matemáticas Discretas",
+        "title": "Matemáticas Discretas",
         "date": "10/10/2025",
         "days": ["Lunes", "Viernes"],
         "term": ["14:00 - 16:00"],
